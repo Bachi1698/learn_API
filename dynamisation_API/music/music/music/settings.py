@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
     'symphonius.apps.SymphoniusConfig',
+    'api.apps.ApiConfig',
     'rest_framework',
 ]
 

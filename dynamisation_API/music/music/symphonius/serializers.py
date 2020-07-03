@@ -5,7 +5,7 @@ class GallerieSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Gallerie
         fields = '__all__'
-
+ 
 class EquipeSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Equipe

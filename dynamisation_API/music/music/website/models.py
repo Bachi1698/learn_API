@@ -9,7 +9,7 @@ class Carousol(models.Model):
     status = models.BooleanField(default=True)
 
  
-    class Meta:
+    class Meta: 
         verbose_name = 'carousol'
         verbose_name_plural = 'carousols'
 
