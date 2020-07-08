@@ -15,6 +15,8 @@ class MusiqueSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Musique
         fields = '__all__'
+        depth = 1
+
 
 class AlbumSerializer(serializers.ModelSerializer):
     album_musque = MusiqueSerializer(many=True, required=False)

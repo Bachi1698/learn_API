@@ -49,3 +49,19 @@ class About(models.Model):
 
     def __str__(self):
         return self.nom
+
+class Contact(models.Model):
+    nom = models.CharField(max_length=255,null=True)
+    email = models.EmailField(null=True)
+    message = models.TextField(null=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+    status = models.BooleanField(default=True)
+
+
+    class Meta:
+        verbose_name = 'contact'
+        verbose_name_plural = 'contacts'
+
+    def __str__(self):
+        return self.nom

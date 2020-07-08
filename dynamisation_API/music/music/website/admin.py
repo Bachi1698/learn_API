@@ -24,7 +24,7 @@ class SiteInfoAdmin(CustomAdmin):
     list_display_links = ['slogan']
     ordering = ['slogan']
     fieldsets = [
-                ("info commentaire",{"fields":["slogan","email","tel","carousol","logo"]}),
+                ("info site",{"fields":["slogan","email","tel","carousol","logo"]}),
                 ("standard",{"fields":["status"]}) 
      ]
 
@@ -37,7 +37,7 @@ class CarousolAdmin(CustomAdmin):
     list_display_links = ['titre']
     ordering = ['titre']
     fieldsets = [
-                ("info commentaire",{"fields":["titre","image"]}),
+                ("info carousol",{"fields":["titre","image"]}),
                 ("standard",{"fields":["status"]}) 
      ]
 
@@ -50,10 +50,19 @@ class AboutAdmin(CustomAdmin):
     list_display_links = ['nom']
     ordering = ['nom']
     fieldsets = [
-                ("info commentaire",{"fields":["nom","description","image"]}),
+                ("info about",{"fields":["nom","description","image"]}),
                 ("standard",{"fields":["status"]}) 
      ]
 
+class ContactAdmin(CustomAdmin):
+    list_display = ('nom','email','date_add','date_update','status')
+    search_fields = ('nom',)
+    list_display_links = ['nom']
+    ordering = ['nom']
+    fieldsets = [
+                ("info contact",{"fields":["nom","email","message"]}),
+                ("standard",{"fields":["status"]}) 
+     ]
 
 def _register(model,admin_class):
     admin.site.register(model,admin_class)
@@ -62,3 +71,4 @@ def _register(model,admin_class):
 _register(models.SiteInfo, SiteInfoAdmin)
 _register(models.About,AboutAdmin)
 _register(models.Carousol,CarousolAdmin)
+_register(models.Contact,ContactAdmin)

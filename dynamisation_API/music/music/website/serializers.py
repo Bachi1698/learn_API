@@ -16,3 +16,7 @@ class CarousolSerializer(serializers.ModelSerializer):
         model = models.Carousol
         fields = '__all__'
 
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Contact
+        fields = '__all__'

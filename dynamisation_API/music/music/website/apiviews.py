@@ -13,3 +13,7 @@ class CarousolViewSet(viewsets.ModelViewSet):
 class SiteInfoViewSet(viewsets.ModelViewSet):
     queryset = models.SiteInfo.objects.all()
     serializer_class = serializers.SiteInfoSerializer
+
+class ContactViewSet(viewsets.ModelViewSet):
+    queryset = models.Contact.objects.all()
+    serializer_class = serializers.ContactSerializer

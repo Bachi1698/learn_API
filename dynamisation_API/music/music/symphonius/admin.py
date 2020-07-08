@@ -30,7 +30,7 @@ class TourAdmin(CustomAdmin):
 
 
 class VideoAdmin(CustomAdmin):
-    list_display = ('titre','date_add','date_update','video_view')
+    list_display = ('titre','date_add','date_update','status')
     search_fields = ('titre',)
     list_display_links = ['titre']
     ordering = ['titre']
@@ -38,9 +38,6 @@ class VideoAdmin(CustomAdmin):
                 ("info commentaire",{"fields":["titre","video"]}),
                 ("standard",{"fields":["status"]}) 
      ]
-
-    def video_view(self,obj):
-        return mark_safe("<iframe src='{url}' width='100px',height='50px'></iframe>".format(url=obj.video.url))
 
 class MusiqueAdmin(CustomAdmin):
     list_display = ('titre','date_add','date_update','musique')

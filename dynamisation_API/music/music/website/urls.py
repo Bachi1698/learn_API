@@ -6,6 +6,7 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('about', apiviews.AboutViewSet, basename='about')
 router.register('carousol', apiviews.CarousolViewSet, basename='carousol')
+router.register('contact', apiviews.ContactViewSet, basename='contact')
 router.register('site', apiviews.SiteInfoViewSet, basename='site')
 
 urlpatterns = [

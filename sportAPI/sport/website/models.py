@@ -79,7 +79,7 @@ class SiteInfo(models.Model):
     date_update = models.DateTimeField(auto_now=True)
     status = models.BooleanField(default=True)
 
-
+ 
     class Meta:
         verbose_name = 'site info'
         verbose_name_plural = 'sites infos'
